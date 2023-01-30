@@ -49,14 +49,18 @@
             document.getElementById("div-data").innerHTML="异步!";
         }
         setTimeout(print, 3000);
+        
         //let data = {
         //    name:"xiao"
         //}
-        let res = await axios({
-            url: 'http://www.weather.com.cn/data/sk/101010100.html', // 向url发送get请求
-        //    params: data, // 可携带参数，会自动转化为QueryString
-        })
-        console.log(res.data) // 后端传回的数据
+        (async () => {
+            let res = await axios({
+                url: 'http://www.weather.com.cn/data/sk/101010100.html', // 向url发送get请求
+            //    params: data, // 可携带参数，会自动转化为QueryString
+            })
+            console.log(res.data) // 后端传回的数据
+        })();
+        
     </script>
 </body>
 </html>
