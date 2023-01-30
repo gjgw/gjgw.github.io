@@ -50,12 +50,16 @@
         }
         setTimeout(print, 3000);
         
-        //let data = {
-        //    name:"xiao"
-        //}
         (async () => {
+			let data = {
+			    fzsid: 585
+			}
+			
             let res = await axios({
-                url: 'http://www.weather.com.cn/data/sk/101010100.html', // 向url发送get请求
+				url: 'https://www.free-api.com/urltask', // 向url发送请求
+				method: 'post', // 指定psot请求
+				data, // 携带数据
+            //    url: 'https://www.apiopen.top/weatherApi?city=%E4%B8%8A%E6%B5%B7', // 向url发送get请求
             //    params: data, // 可携带参数，会自动转化为QueryString
             })
             console.log(res.data) // 后端传回的数据
