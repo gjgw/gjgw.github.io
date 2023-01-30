@@ -41,6 +41,12 @@
  
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        
+        
+        function print() {
+            document.getElementById("div-data").innerHTML="异步!";
+        }
+        setTimeout(print, 3000);
     </script>
 </body>
 </html>
