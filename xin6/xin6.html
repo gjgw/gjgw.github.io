@@ -17,6 +17,19 @@
     <script type="text/javascript">
         
         console.log('能不能显示')
+	
+	async function fetchWithTimeout(resource) {
+	  const controller = new AbortController();
+	  return fetch('https://www.baidu.com', {
+	    method: 'GET',
+	    mode: 'no-cors',
+	  }).then((response) => {
+		console.log(response.data)
+	    return response;
+	  }).catch((error) => {
+	    throw error;
+	  });
+	}
         
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
